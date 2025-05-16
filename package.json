@@ -1,5 +1,12 @@
 {
   "dependencies": {
-    "vite": "^6.3.5"
+    "bootstrap": "^5.3.6",
+    "firebase": "^11.7.3",
+    "react-bootstrap": "^2.10.10",
+    "vite": "^6.3.5",
+    "zod": "^3.24.4"
+  },
+  "devDependencies": {
+    "@types/react-bootstrap": "^0.32.37"
   }
 }
