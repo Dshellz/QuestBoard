@@ -59,7 +59,7 @@ const QuestList = () => {
       // Lire les points now
       const pointsRef = ref(db, "utilisateur/points");
       const snapshot = await get(pointsRef);
-      const currentPoints = snapshot.val() || 0; // à voir
+      const currentPoints = snapshot.val() || 0;
 
       // Ajout des 10 points
       const newPoints = currentPoints + completedQuests.length * 10;
@@ -105,7 +105,7 @@ const QuestList = () => {
       </ul>
       <div className="d-flex justify-content-center">
         <button
-          className="btn btn-success mt-3 "
+          className="btn btn-success mt-3 mb-3"
           type="button"
           onClick={handleValidateAll}
         >

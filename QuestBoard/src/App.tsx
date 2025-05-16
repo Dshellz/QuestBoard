@@ -1,6 +1,7 @@
 import QuestList from "./components/QuestList";
 import "./App.css";
 import AddQuestForm from "./components/AddQuestForm";
+import QuestProgress from "./components/QuestProgress";
 
 function App() {
   return (
@@ -8,6 +9,7 @@ function App() {
       <h1 className="mb-3">Mon QuestBoard</h1>
       <AddQuestForm />
       <div>
+        <QuestProgress />
         <QuestList />
       </div>
     </div>
