@@ -52,9 +52,11 @@ const AddQuestForm = () => {
           onChange={(e) => setQuete(e.target.value)}
         />
       </div>
-      <button className="btn btn-primary" type="submit">
-        Ajouter
-      </button>
+      <div className="d-flex justify-content-center">
+        <button className="btn btn-success" type="submit">
+          Ajouter
+        </button>
+      </div>
     </form>
   );
 };

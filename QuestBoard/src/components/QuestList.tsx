@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import quete from "../assets/quete.svg";
 import { db } from "../firebase";
 import { ref, onValue, update, get, remove, set } from "firebase/database";
-import Button from "react-bootstrap/Button";
+import QuestItem from "./QuestItem";
 
 type Item = {
   // TypeScript type pour l'item quête
@@ -94,33 +94,24 @@ const QuestList = () => {
 
       <ul className="list-group">
         {quests.map((quest) => (
-          <li key={quest.id} className="list-group-item">
-            <input
-              className="form-check-input me-1"
-              type="checkbox"
-              checked={quest.completed}
-              onChange={() => handleToggle(quest.id, quest.completed)} // onChange appelle la fonction handleToggle
-              id={`checkboxStretched-${quest.id}`} // Donne un ID unique à chaque checkbox
-            />
-            <label
-              className="form-check-label stretched-link ms-3"
-              htmlFor={`checkboxStretched-${quest.id}`} // ce label associé à l’input qui a cet ID, ça active la checkbox correspondante.
-            >
-              {quest.quete}
-              <Button variant="outline-danger" className="btn ms-3">
-                Supprimer
-              </Button>
-            </label>
-          </li>
+          <QuestItem
+            key={quest.id}
+            id={quest.id}
+            quete={quest.quete}
+            completed={quest.completed}
+            onToggle={handleToggle}
+          />
         ))}
       </ul>
-      <button
-        className="btn btn-success btn-sm mt-3 ms-3"
-        type="button"
-        onClick={handleValidateAll}
-      >
-        Valider
-      </button>
+      <div className="d-flex justify-content-center">
+        <button
+          className="btn btn-success mt-3 "
+          type="button"
+          onClick={handleValidateAll}
+        >
+          Valider
+        </button>
+      </div>
     </div>
   );
 };
