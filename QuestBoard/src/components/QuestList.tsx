@@ -35,7 +35,7 @@ const QuestList = () => {
           completed: quest.completed,
         })
       );
-      setQuests(loadedQuests);
+      setQuests(loadedQuests); // met à jour l'état avec les quêtes chargées (re-render automatiquement le composant)
     });
 
     return () => unsubscribe(); // nettoyage
