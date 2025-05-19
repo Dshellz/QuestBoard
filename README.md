@@ -31,21 +31,20 @@ Une application React pour gérer des quêtes quotidiennes avec Firebase et une 
 1. **Crée un projet Firebase RTDB** 
 2. **Copier les infos de configuration (`apiKey`, `authDomain`, etc)**
 3. **Créer un fichier `firebase.ts` dans `src/` et ajouter la configuration :**
-`// src/firebase.ts`
-`import { initializeApp } from "firebase/app";`
-`import { getDatabase } from "firebase/database";`
 
-`const firebaseConfig = {`
-  `apiKey: "API_KEY",`
-  `authDomain: "AUTH_DOMAIN",`
-  `databaseURL: "DATABASE_URL",`
-  `projectId: "PROJECT_ID",`
-  `storageBucket: "STORAGE_BUCKET",`
-  `messagingSenderId: "MESSAGING_SENDER_ID",`
-  `appId: "APP_ID"`
-`};`
+``// src/firebase.ts
+import { initializeApp } from "firebase/app";
+import { getDatabase } from "firebase/database";
+const firebaseConfig = {
+  apiKey: "API_KEY",
+  authDomain: "AUTH_DOMAIN",
+  databaseURL: "DATABASE_URL",
+  projectId: "PROJECT_ID",
+  storageBucket: "STORAGE_BUCKET",
+  messagingSenderId: "MESSAGING_SENDER_ID",
+  appId: "APP_ID"
+};
+const app = initializeApp(firebaseConfig);
+export const db = getDatabase(app);``
 
-`const app = initializeApp(firebaseConfig);`
-`export const db = getDatabase(app);`
-
-#dshellz
+**dshellz**
