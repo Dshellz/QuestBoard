@@ -38,7 +38,7 @@ const QuestList = () => {
       setQuests(loadedQuests); // met à jour l'état avec les quêtes chargées (re-render automatiquement le composant)
     });
 
-    return () => unsubscribe(); // nettoyage
+    return () => unsubscribe(); // nettoyage car risque de fuites de mémoire quand le composant se démonte
   }, []);
 
   useEffect(() => {
