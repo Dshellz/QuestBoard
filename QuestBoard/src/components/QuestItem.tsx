@@ -1,5 +1,5 @@
 import { ref, remove } from "firebase/database";
-import type { FC } from "react";
+import { type FC } from "react";
 import Button from "react-bootstrap/Button";
 import { db } from "../firebase";
 
@@ -38,7 +38,7 @@ const QuestItem: FC<QuestItemProps> = ({ id, quete, completed, onToggle }) => {
       <Button
         variant="danger"
         size="sm"
-        className="ms-2"
+        className="ms-4"
         onClick={() => onDelete(id)}
       >
         Supprimer
