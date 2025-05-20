@@ -1,4 +1,4 @@
-# QuestBoard
+# QuestBoard 🔅
 
 Une application React pour gérer des quêtes quotidiennes avec Firebase et une barre de progression. À chaque quête validée, l'utilisateur gagne 10 points.
 
@@ -14,7 +14,7 @@ Une application React pour gérer des quêtes quotidiennes avec Firebase et une 
 
 ---
 
-## Installation
+## Installation ⚙
 
 1. **Cloner le projet**
 
@@ -29,7 +29,7 @@ Une application React pour gérer des quêtes quotidiennes avec Firebase et une 
 
 **(en cas d'erreur au lancement) ->** `npm install @vitejs/plugin-react --save-dev`
 
-## Configurer Firebase
+## Configurer Firebase 📡
 
 1. **Crée un projet Firebase RTDB**
 2. **Copier les infos de configuration (`apiKey`, `authDomain`, etc)**
