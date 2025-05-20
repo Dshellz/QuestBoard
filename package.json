@@ -2,6 +2,10 @@
   "dependencies": {
     "@babel/preset-env": "^7.27.2",
     "@babel/preset-react": "^7.27.1",
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.0",
+    "@mui/icons-material": "^7.1.0",
+    "@mui/styled-engine": "^7.1.0",
     "babel-jest": "^29.7.0",
     "bootstrap": "^5.3.6",
     "firebase": "^11.7.3",

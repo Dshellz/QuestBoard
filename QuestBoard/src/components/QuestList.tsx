@@ -3,8 +3,8 @@ import quete from "../assets/quete.svg";
 import { db } from "../firebase";
 import { ref, onValue, update, get, remove, set } from "firebase/database";
 import QuestItem from "./QuestItem";
-import { CssVarsProvider, extendTheme } from "@mui/joy/styles";
-import { Box } from "@mui/joy";
+import { Box, CssVarsProvider } from "@mui/joy";
+import theme from "./theme";
 
 type Item = {
   // TypeScript type pour l'item quête
@@ -12,8 +12,6 @@ type Item = {
   quete: string;
   completed: boolean;
 };
-
-const customTheme = extendTheme({});
 
 const QuestList = () => {
   const [quests, setQuests] = useState<Item[]>([]); // inititalise l'état avec un tableau vide et lui donne un type
@@ -82,7 +80,7 @@ const QuestList = () => {
   return (
     <div className="mt-4">
       <div className="d-flex align-items-center mb-3">
-        <CssVarsProvider theme={customTheme}>
+        <CssVarsProvider theme={theme}>
           <Box sx={(theme) => theme.typography.h2}>Liste des quêtes</Box>
         </CssVarsProvider>
         <img
@@ -95,7 +93,7 @@ const QuestList = () => {
           }}
         />
       </div>
-      <CssVarsProvider theme={customTheme}>
+      <CssVarsProvider theme={theme}>
         <Box sx={(theme) => theme.typography.h3}>Points Totaux : {points}</Box>
       </CssVarsProvider>
 

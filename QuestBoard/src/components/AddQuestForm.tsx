@@ -2,12 +2,11 @@ import { useState, type FormEvent } from "react";
 import { db } from "../firebase";
 import { ref, push } from "firebase/database";
 import bolt from "../assets/bolt.svg";
-import { CssVarsProvider, extendTheme } from "@mui/joy/styles";
-import { Box } from "@mui/joy";
+import { Box, CssVarsProvider } from "@mui/joy";
+import theme from "./theme";
 
 const AddQuestForm = () => {
   const [quete, setQuete] = useState("");
-  const customTheme = extendTheme({});
 
   const handleSubmit = async (event: FormEvent) => {
     event.preventDefault(); // Empecher le rechargement de la page
@@ -35,7 +34,7 @@ const AddQuestForm = () => {
       <div className="mb-3">
         <label htmlFor="" className="form-label">
           <div className="d-flex align-items-center">
-            <CssVarsProvider theme={customTheme}>
+            <CssVarsProvider theme={theme}>
               <Box sx={(theme) => theme.typography.h3}>Ajouter une quête</Box>
             </CssVarsProvider>
             <img
