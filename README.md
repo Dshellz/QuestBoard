@@ -2,7 +2,7 @@
 
 Une application React pour gérer des quêtes quotidiennes avec Firebase et une barre de progression. À chaque quête validée, l'utilisateur gagne 10 points.
 
-![Vidéo de présentation](QuestBoard/presentation.gif)
+![Vidéo de présentation](QuestBoard/src/assets/presentation.gif)
 
 ## Fonctionnalités
 

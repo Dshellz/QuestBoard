@@ -21,6 +21,10 @@ const theme = extendTheme({
       },
     },
   },
+  fontFamily: {
+    display: "Noto Sans", // applies to `h1`–`h4`
+    body: "Noto Sans", // applies to `title-*` and `body-*`
+  },
 });
 
 export default theme;
