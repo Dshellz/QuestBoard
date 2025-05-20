@@ -2,7 +2,7 @@ import { useState, type FormEvent } from "react";
 import { db } from "../firebase";
 import { ref, push } from "firebase/database";
 import bolt from "../assets/bolt.svg";
-import { Box, CssVarsProvider } from "@mui/joy";
+import { Box, Button, CssVarsProvider, Input } from "@mui/joy";
 import theme from "./theme";
 
 const AddQuestForm = () => {
@@ -48,18 +48,19 @@ const AddQuestForm = () => {
             />
           </div>
         </label>
-        <input
-          id="quêtes"
-          type="text"
-          className="form-control"
-          value={quete}
-          onChange={(e) => setQuete(e.target.value)}
+        <Input
+          color="neutral"
+          placeholder="Votre quête"
+          size="md"
+          variant="outlined"
+          value={quete} // lie la valeur affiché dans le champ à l'état quete
+          onChange={(e) => setQuete(e.target.value)} // e = événement de changement change event qui se produit lors de la saisie, setQuete est une fonction d'état useStat qui met à jour la variable quete
         />
       </div>
       <div className="d-flex justify-content-center mb-2">
-        <button className="btn btn-success" type="submit">
+        <Button color="success" variant="outlined" type="submit">
           Ajouter
-        </button>
+        </Button>
       </div>
     </form>
   );

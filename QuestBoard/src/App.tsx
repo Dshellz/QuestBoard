@@ -5,7 +5,6 @@ import QuestProgress from "./components/QuestProgress";
 import QuestLinkCard from "./components/QuestLinkCard";
 import { Box, CssVarsProvider } from "@mui/joy";
 import theme from "./components/theme";
-import SnackbarWithDecorators from "./components/QuestSnackBar";
 
 function App() {
   return (
