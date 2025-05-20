@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import ProgressBar from "react-bootstrap/ProgressBar";
 import { db } from "../firebase";
 import { onValue, ref } from "firebase/database";
+import { CssVarsProvider, extendTheme } from "@mui/joy/styles";
+import { Box } from "@mui/joy";
 
 function QuestProgress() {
   const [points, setPoints] = useState(0); // commence à 0 par défaut
@@ -17,7 +19,7 @@ function QuestProgress() {
 
     return () => unsubscribe();
   }, []);
-
+  const customTheme = extendTheme({});
   const progress = Math.min((points / objectif) * 100, 100); // Calcul pour faire un %
 
   useEffect(() => {
@@ -31,7 +33,11 @@ function QuestProgress() {
 
   return (
     <div className="mt-2">
-      <h4>Atteignez votre objectif quotidien de {objectif} points !</h4>
+      <CssVarsProvider theme={customTheme}>
+        <Box sx={(theme) => theme.typography.h4}>
+          Atteignez votre objectif quotidien de {objectif} points !
+        </Box>
+      </CssVarsProvider>
       <ProgressBar
         variant="success"
         label={`${Math.round(progress)}%`} // Affiche le % de progression
