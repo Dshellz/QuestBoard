@@ -16,12 +16,8 @@ export default function SnackbarWithDecorators() {
             justifyContent: "center",
           }}
         >
-          <Button
-            variant="outlined"
-            color="neutral"
-            onClick={() => setOpen(true)}
-          >
-            Oh non flemme
+          <Button variant="plain" color="neutral" onClick={() => setOpen(true)}>
+            Roh Flemme
           </Button>
         </Box>
         <Snackbar

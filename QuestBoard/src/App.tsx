@@ -29,7 +29,6 @@ function App() {
       <div>
         <QuestProgress />
         <QuestList />
-        <SnackbarWithDecorators />
       </div>
     </div>
   );

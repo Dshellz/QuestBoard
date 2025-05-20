@@ -3,8 +3,9 @@ import quete from "../assets/quete.svg";
 import { db } from "../firebase";
 import { ref, onValue, update, get, remove, set } from "firebase/database";
 import QuestItem from "./QuestItem";
-import { Box, CssVarsProvider } from "@mui/joy";
+import { Box, Button, ButtonGroup, CssVarsProvider } from "@mui/joy";
 import theme from "./theme";
+import SnackbarWithDecorators from "./QuestSnackBar";
 
 type Item = {
   // TypeScript type pour l'item quête
@@ -108,14 +109,15 @@ const QuestList = () => {
           />
         ))}
       </ul>
-      <div className="d-flex justify-content-center">
-        <button
-          className="btn btn-success mt-3 mb-3"
-          type="button"
-          onClick={handleValidateAll}
-        >
-          Valider
-        </button>
+      <div className="d-flex justify-content-center mt-3 mb-3">
+        <ButtonGroup size="sm" aria-label="solid button group">
+          <Button color="success" onClick={handleValidateAll}>
+            Valider
+          </Button>
+          <Button>
+            <SnackbarWithDecorators />
+          </Button>
+        </ButtonGroup>
       </div>
     </div>
   );
