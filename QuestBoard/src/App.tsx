@@ -13,7 +13,11 @@ function App() {
       <CssVarsProvider theme={theme}>
         <Box
           sx={(theme) => ({
+            backgroundColor: "var(--joy-palette-success-300, #A1E8A1)",
             ...theme.typography.h1,
+            padding: "8px",
+            borderRadius: "4px",
+            display: "inline-block",
           })}
         >
           Mon Questboard

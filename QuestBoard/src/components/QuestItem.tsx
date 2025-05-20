@@ -1,7 +1,8 @@
 import { ref, remove } from "firebase/database";
 import { type FC } from "react";
-import Button from "react-bootstrap/Button";
+import Button from "@mui/joy/Button";
 import { db } from "../firebase";
+import { Close } from "@mui/icons-material";
 
 type QuestItemProps = {
   id: string;
@@ -35,14 +36,16 @@ const QuestItem: FC<QuestItemProps> = ({ id, quete, completed, onToggle }) => {
           <div className="">{quete}</div>
         </label>
       </div>
-      <Button
-        variant="danger"
-        size="sm"
-        className="ms-4"
-        onClick={() => onDelete(id)}
-      >
-        Supprimer
-      </Button>
+      <div className="ms-3">
+        <Button
+          size="sm"
+          variant="outlined"
+          color="neutral"
+          onClick={() => onDelete(id)}
+        >
+          {<Close />}
+        </Button>
+      </div>
     </li>
   );
 };
