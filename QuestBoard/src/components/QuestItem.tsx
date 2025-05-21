@@ -41,10 +41,11 @@ const QuestItem: FC<QuestItemProps> = ({ id, quete, completed, onToggle }) => {
           sx={{
             padding: "2px 4px",
             minWidth: "auto",
+            borderRadius: "15px",
           }}
           size="sm"
           variant="outlined"
-          color="neutral"
+          color="danger"
           onClick={() => onDelete(id)}
         >
           {<Close />}
