@@ -3,7 +3,7 @@ import { useState, type FC } from "react";
 import { db } from "../firebase";
 import { Close, Edit } from "@mui/icons-material";
 import { Button, Typography } from "@mui/joy";
-import { TextField } from "@mui/material";
+import { List, TextField } from "@mui/material";
 import { Checkbox } from "@mui/material";
 
 type QuestItemProps = {
@@ -34,7 +34,7 @@ const QuestItem: FC<QuestItemProps> = ({ id, quete, completed, onToggle }) => {
 
   // type un composant fonctionnelle
   return (
-    <li className="list-group-item d-flex align-items-center">
+    <List className="list-group-item d-flex align-items-center">
       <div className="d-flex align-items-center">
         <Checkbox
           checked={completed}
@@ -91,7 +91,7 @@ const QuestItem: FC<QuestItemProps> = ({ id, quete, completed, onToggle }) => {
           {<Edit />}
         </Button>
       </div>
-    </li>
+    </List>
   );
 };
 
