@@ -38,6 +38,10 @@ const QuestItem: FC<QuestItemProps> = ({ id, quete, completed, onToggle }) => {
       </div>
       <div className="ms-3">
         <Button
+          sx={{
+            padding: "2px 4px",
+            minWidth: "auto",
+          }}
           size="sm"
           variant="outlined"
           color="neutral"
