@@ -34,11 +34,15 @@ const QuestItem: FC<QuestItemProps> = ({ id, quete, completed, onToggle }) => {
 
   // type un composant fonctionnelle
   return (
-    <List className="list-group-item d-flex align-items-center">
+    <List
+      data-testid="list-quetes"
+      className="list-group-item d-flex align-items-center"
+    >
       <div className="d-flex align-items-center">
         <Checkbox
           checked={completed}
           onChange={() => onToggle(id, completed.valueOf())} // pour valider simplement
+          data-testid={`checkbox-${id}`}
         />
         {isEditing ? (
           <>
@@ -47,6 +51,7 @@ const QuestItem: FC<QuestItemProps> = ({ id, quete, completed, onToggle }) => {
               onChange={(e) => setEditedQuete(e.target.value)}
               size="small"
               sx={{ ml: 2 }}
+              slotProps={{ htmlInput: { "data-testid": "textfield-edit" } }}
             />
             <Button
               size="sm"
@@ -54,6 +59,7 @@ const QuestItem: FC<QuestItemProps> = ({ id, quete, completed, onToggle }) => {
               color="success"
               onClick={handleEdit}
               sx={{ ml: 1 }}
+              data-testid={`btn-sauvegarder-${id}`}
             >
               Sauvegarder
             </Button>
@@ -73,6 +79,7 @@ const QuestItem: FC<QuestItemProps> = ({ id, quete, completed, onToggle }) => {
           variant="outlined"
           color="danger"
           onClick={() => onDelete(id)}
+          data-testid="btn-close"
         >
           {<Close />}
         </Button>
@@ -87,6 +94,7 @@ const QuestItem: FC<QuestItemProps> = ({ id, quete, completed, onToggle }) => {
           variant="outlined"
           color="neutral"
           onClick={() => setIsEditing(true)}
+          data-testid={`btn-edit-${id}`}
         >
           {<Edit />}
         </Button>

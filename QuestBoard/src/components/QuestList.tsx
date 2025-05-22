@@ -111,7 +111,11 @@ const QuestList = () => {
       </ul>
       <div className="d-flex justify-content-center mt-3 mb-3">
         <ButtonGroup size="sm" aria-label="solid button group">
-          <Button color="success" onClick={handleValidateAll}>
+          <Button
+            data-testid="btn-valid"
+            color="success"
+            onClick={handleValidateAll}
+          >
             Valider
           </Button>
           <Button>

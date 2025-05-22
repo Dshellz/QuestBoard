@@ -55,6 +55,11 @@ const AddQuestForm = () => {
           variant="outlined"
           value={quete} // lie la valeur affiché dans le champ à l'état quete
           onChange={(e) => setQuete(e.target.value)} // e = événement de changement change event qui se produit lors de la saisie, setQuete est une fonction d'état useStat qui met à jour la variable quete
+          slotProps={{
+            input: {
+              "data-testid": "input-quetes",
+            },
+          }}
         />
       </div>
       <div className="d-flex justify-content-center mb-2">
